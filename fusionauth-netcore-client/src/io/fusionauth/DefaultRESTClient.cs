@@ -169,6 +169,26 @@ namespace io.fusionauth {
       }
     }
 
+    public override async Task<ClientResponse> goAsync() {
+      var clientResponse = new ClientResponse();
+      try
+      {
+        var result = await baseRequest();
+        clientResponse.statusCode = (int)result.StatusCode;
+        var contentResult = await result.Content.ReadAsStringAsync();
+        if (!result.IsSuccessStatusCode)
+        {
+          clientResponse.errorResponse = JsonConvert.DeserializeObject<Errors>(contentResult);
+        }
+      }
+      catch (Exception e)
+      {
+        clientResponse.exception = e;
+      }
+
+      return clientResponse;
+    }
+
     public override async Task<ClientResponse<T>> goAsync<T>() {
       var clientResponse = new ClientResponse<T>();
       try

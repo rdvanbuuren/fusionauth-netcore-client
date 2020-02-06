@@ -31,7 +31,7 @@ namespace io.fusionauth {
       return new FusionAuthClient(apiKey, "http://localhost:9011", tenantId.ToString());
     }
 
-    public TestBuilder assertSuccess<T>(ClientResponse<T> response) {
+    public TestBuilder assertSuccess(ClientResponse response) {
       var message = response.exception == null ? "No Errors" : response.exception.ToString();
       Assert.IsNull(response.exception);
       Assert.AreEqual(200, response.statusCode,

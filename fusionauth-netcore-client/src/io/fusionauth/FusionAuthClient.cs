@@ -209,12 +209,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> ChangePasswordByIdentityAsync(ChangePasswordRequest request) {
+    public Task<ClientResponse> ChangePasswordByIdentityAsync(ChangePasswordRequest request) {      
       return buildClient()
           .withUri("/api/user/change-password")
           .withJSONBody(request)
           .withMethod("Post")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -227,7 +227,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> ChangePasswordByIdentity(ChangePasswordRequest request) {
+    public ClientResponse ChangePasswordByIdentity(ChangePasswordRequest request) {
       return ChangePasswordByIdentityAsync(request).GetAwaiter().GetResult();
     }
 
@@ -240,12 +240,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> CommentOnUserAsync(UserCommentRequest request) {
+    public Task<ClientResponse> CommentOnUserAsync(UserCommentRequest request) {      
       return buildClient()
           .withUri("/api/user/comment")
           .withJSONBody(request)
           .withMethod("Post")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -256,7 +256,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> CommentOnUser(UserCommentRequest request) {
+    public ClientResponse CommentOnUser(UserCommentRequest request) {
       return CommentOnUserAsync(request).GetAwaiter().GetResult();
     }
 
@@ -823,12 +823,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeactivateApplicationAsync(Guid? applicationId) {
+    public Task<ClientResponse> DeactivateApplicationAsync(Guid? applicationId) {      
       return buildClient()
           .withUri("/api/application")
           .withUriSegment(applicationId)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -839,7 +839,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeactivateApplication(Guid? applicationId) {
+    public ClientResponse DeactivateApplication(Guid? applicationId) {
       return DeactivateApplicationAsync(applicationId).GetAwaiter().GetResult();
     }
 
@@ -852,12 +852,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeactivateUserAsync(Guid? userId) {
+    public Task<ClientResponse> DeactivateUserAsync(Guid? userId) {      
       return buildClient()
           .withUri("/api/user")
           .withUriSegment(userId)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -868,7 +868,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeactivateUser(Guid? userId) {
+    public ClientResponse DeactivateUser(Guid? userId) {
       return DeactivateUserAsync(userId).GetAwaiter().GetResult();
     }
 
@@ -881,12 +881,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeactivateUserActionAsync(Guid? userActionId) {
+    public Task<ClientResponse> DeactivateUserActionAsync(Guid? userActionId) {      
       return buildClient()
           .withUri("/api/user-action")
           .withUriSegment(userActionId)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -897,7 +897,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeactivateUserAction(Guid? userActionId) {
+    public ClientResponse DeactivateUserAction(Guid? userActionId) {
       return DeactivateUserActionAsync(userActionId).GetAwaiter().GetResult();
     }
 
@@ -977,13 +977,13 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeleteApplicationAsync(Guid? applicationId) {
+    public Task<ClientResponse> DeleteApplicationAsync(Guid? applicationId) {      
       return buildClient()
           .withUri("/api/application")
           .withUriSegment(applicationId)
           .withParameter("hardDelete", true)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -997,7 +997,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeleteApplication(Guid? applicationId) {
+    public ClientResponse DeleteApplication(Guid? applicationId) {
       return DeleteApplicationAsync(applicationId).GetAwaiter().GetResult();
     }
 
@@ -1012,14 +1012,14 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeleteApplicationRoleAsync(Guid? applicationId, Guid? roleId) {
+    public Task<ClientResponse> DeleteApplicationRoleAsync(Guid? applicationId, Guid? roleId) {      
       return buildClient()
           .withUri("/api/application")
           .withUriSegment(applicationId)
           .withUriSegment("role")
           .withUriSegment(roleId)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -1032,7 +1032,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeleteApplicationRole(Guid? applicationId, Guid? roleId) {
+    public ClientResponse DeleteApplicationRole(Guid? applicationId, Guid? roleId) {
       return DeleteApplicationRoleAsync(applicationId, roleId).GetAwaiter().GetResult();
     }
 
@@ -1045,12 +1045,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeleteConsentAsync(Guid? consentId) {
+    public Task<ClientResponse> DeleteConsentAsync(Guid? consentId) {      
       return buildClient()
           .withUri("/api/consent")
           .withUriSegment(consentId)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -1061,7 +1061,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeleteConsent(Guid? consentId) {
+    public ClientResponse DeleteConsent(Guid? consentId) {
       return DeleteConsentAsync(consentId).GetAwaiter().GetResult();
     }
 
@@ -1074,12 +1074,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeleteEmailTemplateAsync(Guid? emailTemplateId) {
+    public Task<ClientResponse> DeleteEmailTemplateAsync(Guid? emailTemplateId) {      
       return buildClient()
           .withUri("/api/email/template")
           .withUriSegment(emailTemplateId)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -1090,7 +1090,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeleteEmailTemplate(Guid? emailTemplateId) {
+    public ClientResponse DeleteEmailTemplate(Guid? emailTemplateId) {
       return DeleteEmailTemplateAsync(emailTemplateId).GetAwaiter().GetResult();
     }
 
@@ -1103,12 +1103,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeleteGroupAsync(Guid? groupId) {
+    public Task<ClientResponse> DeleteGroupAsync(Guid? groupId) {      
       return buildClient()
           .withUri("/api/group")
           .withUriSegment(groupId)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -1119,7 +1119,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeleteGroup(Guid? groupId) {
+    public ClientResponse DeleteGroup(Guid? groupId) {
       return DeleteGroupAsync(groupId).GetAwaiter().GetResult();
     }
 
@@ -1132,12 +1132,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeleteGroupMembersAsync(MemberDeleteRequest request) {
+    public Task<ClientResponse> DeleteGroupMembersAsync(MemberDeleteRequest request) {      
       return buildClient()
           .withUri("/api/group/member")
           .withJSONBody(request)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -1148,7 +1148,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeleteGroupMembers(MemberDeleteRequest request) {
+    public ClientResponse DeleteGroupMembers(MemberDeleteRequest request) {
       return DeleteGroupMembersAsync(request).GetAwaiter().GetResult();
     }
 
@@ -1161,12 +1161,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeleteIdentityProviderAsync(Guid? identityProviderId) {
+    public Task<ClientResponse> DeleteIdentityProviderAsync(Guid? identityProviderId) {      
       return buildClient()
           .withUri("/api/identity-provider")
           .withUriSegment(identityProviderId)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -1177,7 +1177,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeleteIdentityProvider(Guid? identityProviderId) {
+    public ClientResponse DeleteIdentityProvider(Guid? identityProviderId) {
       return DeleteIdentityProviderAsync(identityProviderId).GetAwaiter().GetResult();
     }
 
@@ -1190,12 +1190,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeleteKeyAsync(Guid? keyOd) {
+    public Task<ClientResponse> DeleteKeyAsync(Guid? keyOd) {      
       return buildClient()
           .withUri("/api/key")
           .withUriSegment(keyOd)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -1206,7 +1206,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeleteKey(Guid? keyOd) {
+    public ClientResponse DeleteKey(Guid? keyOd) {
       return DeleteKeyAsync(keyOd).GetAwaiter().GetResult();
     }
 
@@ -1219,12 +1219,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeleteLambdaAsync(Guid? lambdaId) {
+    public Task<ClientResponse> DeleteLambdaAsync(Guid? lambdaId) {      
       return buildClient()
           .withUri("/api/lambda")
           .withUriSegment(lambdaId)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -1235,7 +1235,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeleteLambda(Guid? lambdaId) {
+    public ClientResponse DeleteLambda(Guid? lambdaId) {
       return DeleteLambdaAsync(lambdaId).GetAwaiter().GetResult();
     }
 
@@ -1249,13 +1249,13 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeleteRegistrationAsync(Guid? userId, Guid? applicationId) {
+    public Task<ClientResponse> DeleteRegistrationAsync(Guid? userId, Guid? applicationId) {      
       return buildClient()
           .withUri("/api/user/registration")
           .withUriSegment(userId)
           .withUriSegment(applicationId)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -1267,7 +1267,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeleteRegistration(Guid? userId, Guid? applicationId) {
+    public ClientResponse DeleteRegistration(Guid? userId, Guid? applicationId) {
       return DeleteRegistrationAsync(userId, applicationId).GetAwaiter().GetResult();
     }
 
@@ -1280,12 +1280,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeleteTenantAsync(Guid? tenantId) {
+    public Task<ClientResponse> DeleteTenantAsync(Guid? tenantId) {      
       return buildClient()
           .withUri("/api/tenant")
           .withUriSegment(tenantId)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -1296,7 +1296,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeleteTenant(Guid? tenantId) {
+    public ClientResponse DeleteTenant(Guid? tenantId) {
       return DeleteTenantAsync(tenantId).GetAwaiter().GetResult();
     }
 
@@ -1309,12 +1309,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeleteThemeAsync(Guid? themeId) {
+    public Task<ClientResponse> DeleteThemeAsync(Guid? themeId) {      
       return buildClient()
           .withUri("/api/theme")
           .withUriSegment(themeId)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -1325,7 +1325,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeleteTheme(Guid? themeId) {
+    public ClientResponse DeleteTheme(Guid? themeId) {
       return DeleteThemeAsync(themeId).GetAwaiter().GetResult();
     }
 
@@ -1339,13 +1339,13 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeleteUserAsync(Guid? userId) {
+    public Task<ClientResponse> DeleteUserAsync(Guid? userId) {      
       return buildClient()
           .withUri("/api/user")
           .withUriSegment(userId)
           .withParameter("hardDelete", true)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -1357,7 +1357,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeleteUser(Guid? userId) {
+    public ClientResponse DeleteUser(Guid? userId) {
       return DeleteUserAsync(userId).GetAwaiter().GetResult();
     }
 
@@ -1371,13 +1371,13 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeleteUserActionAsync(Guid? userActionId) {
+    public Task<ClientResponse> DeleteUserActionAsync(Guid? userActionId) {      
       return buildClient()
           .withUri("/api/user-action")
           .withUriSegment(userActionId)
           .withParameter("hardDelete", true)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -1389,7 +1389,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeleteUserAction(Guid? userActionId) {
+    public ClientResponse DeleteUserAction(Guid? userActionId) {
       return DeleteUserActionAsync(userActionId).GetAwaiter().GetResult();
     }
 
@@ -1402,12 +1402,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeleteUserActionReasonAsync(Guid? userActionReasonId) {
+    public Task<ClientResponse> DeleteUserActionReasonAsync(Guid? userActionReasonId) {      
       return buildClient()
           .withUri("/api/user-action-reason")
           .withUriSegment(userActionReasonId)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -1418,7 +1418,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeleteUserActionReason(Guid? userActionReasonId) {
+    public ClientResponse DeleteUserActionReason(Guid? userActionReasonId) {
       return DeleteUserActionReasonAsync(userActionReasonId).GetAwaiter().GetResult();
     }
 
@@ -1507,12 +1507,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DeleteWebhookAsync(Guid? webhookId) {
+    public Task<ClientResponse> DeleteWebhookAsync(Guid? webhookId) {      
       return buildClient()
           .withUri("/api/webhook")
           .withUriSegment(webhookId)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -1523,7 +1523,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DeleteWebhook(Guid? webhookId) {
+    public ClientResponse DeleteWebhook(Guid? webhookId) {
       return DeleteWebhookAsync(webhookId).GetAwaiter().GetResult();
     }
 
@@ -1537,13 +1537,13 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> DisableTwoFactorAsync(Guid? userId, string code) {
+    public Task<ClientResponse> DisableTwoFactorAsync(Guid? userId, string code) {      
       return buildClient()
           .withUri("/api/user/two-factor")
           .withParameter("userId", userId)
           .withParameter("code", code)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -1555,7 +1555,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> DisableTwoFactor(Guid? userId, string code) {
+    public ClientResponse DisableTwoFactor(Guid? userId, string code) {
       return DisableTwoFactorAsync(userId, code).GetAwaiter().GetResult();
     }
 
@@ -1569,13 +1569,13 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> EnableTwoFactorAsync(Guid? userId, TwoFactorRequest request) {
+    public Task<ClientResponse> EnableTwoFactorAsync(Guid? userId, TwoFactorRequest request) {      
       return buildClient()
           .withUri("/api/user/two-factor")
           .withUriSegment(userId)
           .withJSONBody(request)
           .withMethod("Post")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -1587,7 +1587,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> EnableTwoFactor(Guid? userId, TwoFactorRequest request) {
+    public ClientResponse EnableTwoFactor(Guid? userId, TwoFactorRequest request) {
       return EnableTwoFactorAsync(userId, request).GetAwaiter().GetResult();
     }
 
@@ -2028,12 +2028,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> ImportUsersAsync(ImportRequest request) {
+    public Task<ClientResponse> ImportUsersAsync(ImportRequest request) {      
       return buildClient()
           .withUri("/api/user/import")
           .withJSONBody(request)
           .withMethod("Post")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -2046,7 +2046,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> ImportUsers(ImportRequest request) {
+    public ClientResponse ImportUsers(ImportRequest request) {
       return ImportUsersAsync(request).GetAwaiter().GetResult();
     }
 
@@ -2138,14 +2138,14 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> LoginPingAsync(Guid? userId, Guid? applicationId, string callerIPAddress) {
+    public Task<ClientResponse> LoginPingAsync(Guid? userId, Guid? applicationId, string callerIPAddress) {      
       return buildClient()
           .withUri("/api/login")
           .withUriSegment(userId)
           .withUriSegment(applicationId)
           .withParameter("ipAddress", callerIPAddress)
           .withMethod("Put")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -2162,7 +2162,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> LoginPing(Guid? userId, Guid? applicationId, string callerIPAddress) {
+    public ClientResponse LoginPing(Guid? userId, Guid? applicationId, string callerIPAddress) {
       return LoginPingAsync(userId, applicationId, callerIPAddress).GetAwaiter().GetResult();
     }
 
@@ -2180,13 +2180,13 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> LogoutAsync(bool? global, string refreshToken) {
+    public Task<ClientResponse> LogoutAsync(bool? global, string refreshToken) {      
       return buildAnonymousClient()
           .withUri("/api/logout")
           .withParameter("global", global)
           .withParameter("refreshToken", refreshToken)
           .withMethod("Post")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -2202,7 +2202,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> Logout(bool? global, string refreshToken) {
+    public ClientResponse Logout(bool? global, string refreshToken) {
       return LogoutAsync(global, refreshToken).GetAwaiter().GetResult();
     }
 
@@ -2940,11 +2940,11 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> RefreshUserSearchIndexAsync() {
+    public Task<ClientResponse> RefreshUserSearchIndexAsync() {      
       return buildClient()
           .withUri("/api/user/search")
           .withMethod("Put")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -2957,7 +2957,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> RefreshUserSearchIndex() {
+    public ClientResponse RefreshUserSearchIndex() {
       return RefreshUserSearchIndexAsync().GetAwaiter().GetResult();
     }
 
@@ -3011,13 +3011,13 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> RemoveUserFromFamilyAsync(Guid? familyId, Guid? userId) {
+    public Task<ClientResponse> RemoveUserFromFamilyAsync(Guid? familyId, Guid? userId) {      
       return buildClient()
           .withUri("/api/user/family")
           .withUriSegment(familyId)
           .withUriSegment(userId)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -3029,7 +3029,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> RemoveUserFromFamily(Guid? familyId, Guid? userId) {
+    public ClientResponse RemoveUserFromFamily(Guid? familyId, Guid? userId) {
       return RemoveUserFromFamilyAsync(familyId, userId).GetAwaiter().GetResult();
     }
 
@@ -5146,14 +5146,14 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> RevokeRefreshTokenAsync(string token, Guid? userId, Guid? applicationId) {
+    public Task<ClientResponse> RevokeRefreshTokenAsync(string token, Guid? userId, Guid? applicationId) {      
       return buildClient()
           .withUri("/api/jwt/refresh")
           .withParameter("token", token)
           .withParameter("userId", userId)
           .withParameter("applicationId", applicationId)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -5167,7 +5167,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> RevokeRefreshToken(string token, Guid? userId, Guid? applicationId) {
+    public ClientResponse RevokeRefreshToken(string token, Guid? userId, Guid? applicationId) {
       return RevokeRefreshTokenAsync(token, userId, applicationId).GetAwaiter().GetResult();
     }
 
@@ -5180,12 +5180,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> RevokeUserConsentAsync(Guid? userConsentId) {
+    public Task<ClientResponse> RevokeUserConsentAsync(Guid? userConsentId) {      
       return buildClient()
           .withUri("/api/user/consent")
           .withUriSegment(userConsentId)
           .withMethod("Delete")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -5196,7 +5196,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> RevokeUserConsent(Guid? userConsentId) {
+    public ClientResponse RevokeUserConsent(Guid? userConsentId) {
       return RevokeUserConsentAsync(userConsentId).GetAwaiter().GetResult();
     }
 
@@ -5454,12 +5454,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> SendFamilyRequestEmailAsync(FamilyEmailRequest request) {
+    public Task<ClientResponse> SendFamilyRequestEmailAsync(FamilyEmailRequest request) {      
       return buildClient()
           .withUri("/api/user/family/request")
           .withJSONBody(request)
           .withMethod("Post")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -5470,7 +5470,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> SendFamilyRequestEmail(FamilyEmailRequest request) {
+    public ClientResponse SendFamilyRequestEmail(FamilyEmailRequest request) {
       return SendFamilyRequestEmailAsync(request).GetAwaiter().GetResult();
     }
 
@@ -5483,12 +5483,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> SendPasswordlessCodeAsync(PasswordlessSendRequest request) {
+    public Task<ClientResponse> SendPasswordlessCodeAsync(PasswordlessSendRequest request) {      
       return buildAnonymousClient()
           .withUri("/api/passwordless/send")
           .withJSONBody(request)
           .withMethod("Post")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -5499,7 +5499,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> SendPasswordlessCode(PasswordlessSendRequest request) {
+    public ClientResponse SendPasswordlessCode(PasswordlessSendRequest request) {
       return SendPasswordlessCodeAsync(request).GetAwaiter().GetResult();
     }
 
@@ -5512,12 +5512,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> SendTwoFactorCodeAsync(TwoFactorSendRequest request) {
+    public Task<ClientResponse> SendTwoFactorCodeAsync(TwoFactorSendRequest request) {      
       return buildClient()
           .withUri("/api/two-factor/send")
           .withJSONBody(request)
           .withMethod("Post")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -5528,7 +5528,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> SendTwoFactorCode(TwoFactorSendRequest request) {
+    public ClientResponse SendTwoFactorCode(TwoFactorSendRequest request) {
       return SendTwoFactorCodeAsync(request).GetAwaiter().GetResult();
     }
 
@@ -5541,12 +5541,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> SendTwoFactorCodeForLoginAsync(string twoFactorId) {
+    public Task<ClientResponse> SendTwoFactorCodeForLoginAsync(string twoFactorId) {      
       return buildAnonymousClient()
           .withUri("/api/two-factor/send")
           .withUriSegment(twoFactorId)
           .withMethod("Post")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -5557,7 +5557,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> SendTwoFactorCodeForLogin(string twoFactorId) {
+    public ClientResponse SendTwoFactorCodeForLogin(string twoFactorId) {
       return SendTwoFactorCodeForLoginAsync(twoFactorId).GetAwaiter().GetResult();
     }
 
@@ -6237,13 +6237,13 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> ValidateDeviceAsync(string user_code, string client_id) {
+    public Task<ClientResponse> ValidateDeviceAsync(string user_code, string client_id) {      
       return buildAnonymousClient()
           .withUri("/oauth2/device/validate")
           .withParameter("user_code", user_code)
           .withParameter("client_id", client_id)
           .withMethod("Get")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -6256,7 +6256,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> ValidateDevice(string user_code, string client_id) {
+    public ClientResponse ValidateDevice(string user_code, string client_id) {
       return ValidateDeviceAsync(user_code, client_id).GetAwaiter().GetResult();
     }
 
@@ -6304,12 +6304,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> VerifyEmailAsync(string verificationId) {
+    public Task<ClientResponse> VerifyEmailAsync(string verificationId) {      
       return buildAnonymousClient()
           .withUri("/api/user/verify-email")
           .withUriSegment(verificationId)
           .withMethod("Post")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -6320,7 +6320,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> VerifyEmail(string verificationId) {
+    public ClientResponse VerifyEmail(string verificationId) {
       return VerifyEmailAsync(verificationId).GetAwaiter().GetResult();
     }
 
@@ -6333,12 +6333,12 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public Task<ClientResponse<RESTVoid>> VerifyRegistrationAsync(string verificationId) {
+    public Task<ClientResponse> VerifyRegistrationAsync(string verificationId) {      
       return buildAnonymousClient()
           .withUri("/api/user/verify-registration")
           .withUriSegment(verificationId)
           .withMethod("Post")
-          .goAsync<RESTVoid>();
+          .goAsync();
     }
 		
     /// <summary>
@@ -6349,7 +6349,7 @@ namespace io.fusionauth {
     /// other type of error, this will return the Errors object in the response. Additionally, if FusionAuth could not be
     /// contacted because it is down or experiencing a failure, the response will contain an Exception, which could be an
     /// IOException.</returns>
-    public ClientResponse<RESTVoid> VerifyRegistration(string verificationId) {
+    public ClientResponse VerifyRegistration(string verificationId) {
       return VerifyRegistrationAsync(verificationId).GetAwaiter().GetResult();
     }
   }

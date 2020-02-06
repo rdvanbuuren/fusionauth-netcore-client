@@ -84,18 +84,9 @@ namespace io.fusionauth {
       
       return withParameter(name, value.ToString());
     }
-
-    /**
-     * Run the request and return a promise. This promise will resolve if the request is successful
-     * and reject otherwise.
-     */
-    public ClientResponse<T> go<T>() {
-      return goAsync<T>().Result;
-    }
-
-    /**
-     * 
-     */
+    
     public abstract Task<ClientResponse<T>> goAsync<T>();
+
+    public abstract Task<ClientResponse> goAsync();
   }
 }
